@@ -1,0 +1,19 @@
+<h1 class="ma0 pa2"> Product </h1>
+<a href="/" class="ma0 pa2"> Back to home... </a>
+
+<div class="ma2 pa2 b--dark-gray b--dashed ba">
+  <p><b> {{ product.name }}: </b> {{ product.description }} </p>
+  <p><b> Price: </b> ${{ product.price }} </p>
+</div>
+
+<h3 class="ma0 pa2"> What do you think about this product? </h3>
+<form action="/products/{{ product.id }}" method="post">
+  <input class="ma0 pa2" type="text" name="author" id="author" placeholder="Author">
+  <input class="ma0 pa2" type="text" name="comment" id="comment" placeholder="Comment">
+  <button class="ma0 pa2" type="submit"> Comment </button>
+</form>
+
+<h3 class="ma0 pa2"> Commentaries </h3>
+{{#each commentaries}}
+<p><b> {{ this.author }}: </b> {{ this.comment }} </p>
+{{/each}}

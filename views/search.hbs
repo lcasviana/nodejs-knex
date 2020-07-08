@@ -1,0 +1,12 @@
+<h1 class="ma0 pa2"> Search </h1>
+<a href="/" class="ma0 pa2"> Back to home... </a>
+
+<div class="flex flex-wrap">
+  {{#each products}}
+  <div class="ma2 pa2 b--dark-gray b--dashed ba">
+    <p><b> {{ this.name }}: </b> {{ this.description }} </p>
+    <p><b> Price: </b> ${{ this.price }} </p>
+    <p><a href="/products/{{ this.id }}"> View... </a></p>
+  </div>
+  {{/each}}
+</div>

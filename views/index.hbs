@@ -1,0 +1,20 @@
+<h1 class="ma0 pa2"> Store </h1>
+<p class="ma0 pa2"> Welcome to our product store </p>
+
+<h2 class="ma0 pa2"> Search </h2>
+<form action="/products/price" method="get">
+  <input class="ma0 pa2" type="number" name="lower" id="lower" placeholder="Lower price">
+  <input class="ma0 pa2" type="number" name="upper" id="upper" placeholder="Upper price">
+  <button class="ma0 pa2" type="submit">Search</button>
+</form>
+
+<h2 class="ma0 pa2"> List </h2>
+<div class="flex flex-wrap">
+  {{#each products}}
+  <div class="ma2 pa2 b--dark-gray b--dashed ba">
+    <p><b> {{ this.name }}: </b> {{ this.description }} </p>
+    <p><b> Price: </b> ${{ this.price }} </p>
+    <p><a href="/products/{{ this.id }}"> View... </a></p>
+  </div>
+  {{/each}}
+</div>
